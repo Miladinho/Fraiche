@@ -28,7 +28,24 @@ var Post = sequelize.define('post', {
 })
 
 app.use(cors())
-app.use(bodyParser())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+//app.use(bodyParser())
+
+app.post('/api/1/auth', function(request, response) {
+  var encodedAuth = request.headers['authorization']
+  var tmp = encodedAuth.split(' ');   // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
+  var buf = new Buffer(tmp[1], 'base64'); // create a buffer and tell it the data coming in is base64
+  var plain_auth = buf.toString();
+  // At this point plain_auth = "username:password"
+  var creds = plain_auth.split(':');      // split on a ':'
+  var username = creds[0];
+  var password = creds[1];
+  console.log(creds[0]+" "+creds[1])
+  
+})
 
 app.post('/api/1/posts', function(request, response) {
   //response.json(request.body)
@@ -42,5 +59,16 @@ app.post('/api/1/posts', function(request, response) {
   post.save().then(function() {
     response.json(post)
   })
+})
+
+app.get('/api/1/posts', function(request, response) {
+  var promise = Post.findAll()
+  promise.then(function(posts) {
+    response.json(posts)
+  })
+})
+
+app.delete('/api/1/posts', function(request, response) {
+
 })
 app.listen(3000)

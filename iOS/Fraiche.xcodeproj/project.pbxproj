@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		110D16111DE57A6C0040CCAD /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16101DE57A6C0040CCAD /* ModelBase.swift */; };
+		110D16131DE57A930040CCAD /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16121DE57A930040CCAD /* Posts.swift */; };
+		110D16151DE57AB10040CCAD /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16141DE57AB10040CCAD /* Users.swift */; };
+		110D16191DE57B350040CCAD /* ManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16181DE57B350040CCAD /* ManagerBase.swift */; };
+		110D161B1DE57B730040CCAD /* ServerAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D161A1DE57B730040CCAD /* ServerAPIManager.swift */; };
+		110D161D1DE57B920040CCAD /* PostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D161C1DE57B920040CCAD /* PostsManager.swift */; };
+		110D161F1DE57BAD0040CCAD /* UsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D161E1DE57BAD0040CCAD /* UsersManager.swift */; };
+		110D16211DE57C3B0040CCAD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16201DE57C3B0040CCAD /* PostViewController.swift */; };
+		110D16231DE57C610040CCAD /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16221DE57C610040CCAD /* MarketViewController.swift */; };
+		113230E51DE5693A00953841 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113230E41DE5693A00953841 /* ProfileViewController.swift */; };
+		1170B1451DE40CC4008F221F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1170B1441DE40CC4008F221F /* AppDelegate.swift */; };
+		1170B14A1DE40CC4008F221F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1170B1481DE40CC4008F221F /* Main.storyboard */; };
+		1170B14C1DE40CC4008F221F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1170B14B1DE40CC4008F221F /* Assets.xcassets */; };
+		1170B14F1DE40CC4008F221F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1170B14D1DE40CC4008F221F /* LaunchScreen.storyboard */; };
+		1183F9D91DE8CD3E007EF94A /* FraicheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */; };
+		1183F9E21DE8DA1D007EF94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */; };
+		ED1248B460DCDAE80E067CA5 /* Pods_Fraiche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1183F9DB1DE8CD3E007EF94A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1170B1391DE40CC4008F221F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1170B1401DE40CC4008F221F;
+			remoteInfo = Fraiche;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		110D16101DE57A6C0040CCAD /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelBase.swift; sourceTree = "<group>"; };
+		110D16121DE57A930040CCAD /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
+		110D16141DE57AB10040CCAD /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		110D16181DE57B350040CCAD /* ManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerBase.swift; sourceTree = "<group>"; };
+		110D161A1DE57B730040CCAD /* ServerAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAPIManager.swift; sourceTree = "<group>"; };
+		110D161C1DE57B920040CCAD /* PostsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsManager.swift; sourceTree = "<group>"; };
+		110D161E1DE57BAD0040CCAD /* UsersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersManager.swift; sourceTree = "<group>"; };
+		110D16201DE57C3B0040CCAD /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		110D16221DE57C610040CCAD /* MarketViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		113230E31DE4124E00953841 /* Fraiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Fraiche.entitlements; sourceTree = "<group>"; };
+		113230E41DE5693A00953841 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		1170B1411DE40CC4008F221F /* Fraiche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fraiche.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1170B1441DE40CC4008F221F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1170B1491DE40CC4008F221F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1170B14B1DE40CC4008F221F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1170B14E1DE40CC4008F221F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1170B1501DE40CC4008F221F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1183F9CF1DE8CAF3007EF94A /* FraicheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FraicheTests.swift; path = FraicheTests/FraicheTests.swift; sourceTree = "<group>"; };
+		1183F9D61DE8CD3E007EF94A /* FraicheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FraicheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraicheTests.swift; sourceTree = "<group>"; };
+		1183F9DA1DE8CD3E007EF94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fraiche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche.release.xcconfig"; sourceTree = "<group>"; };
+		BE8B2D7DCF8EBEE1002FE3FC /* Pods-Fraiche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fraiche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche.debug.xcconfig"; sourceTree = "<group>"; };
+		CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fraiche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1170B13E1DE40CC4008F221F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED1248B460DCDAE80E067CA5 /* Pods_Fraiche.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1183F9D31DE8CD3E007EF94A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		110D160F1DE57A580040CCAD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				110D16101DE57A6C0040CCAD /* ModelBase.swift */,
+				110D16121DE57A930040CCAD /* Posts.swift */,
+				110D16141DE57AB10040CCAD /* Users.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		110D16161DE57AF00040CCAD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */,
+				113230E41DE5693A00953841 /* ProfileViewController.swift */,
+				110D16201DE57C3B0040CCAD /* PostViewController.swift */,
+				110D16221DE57C610040CCAD /* MarketViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		110D16171DE57B170040CCAD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				110D16181DE57B350040CCAD /* ManagerBase.swift */,
+				110D161A1DE57B730040CCAD /* ServerAPIManager.swift */,
+				110D161C1DE57B920040CCAD /* PostsManager.swift */,
+				110D161E1DE57BAD0040CCAD /* UsersManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		1170B1381DE40CC4008F221F = {
+			isa = PBXGroup;
+			children = (
+				1183F9D11DE8CB12007EF94A /* FraicheTests */,
+				1170B1431DE40CC4008F221F /* Fraiche */,
+				1183F9D71DE8CD3E007EF94A /* FraicheTests */,
+				1170B1421DE40CC4008F221F /* Products */,
+				25FC8844A4DB459ADA16F328 /* Pods */,
+				D3661BD8C6297F44A47E0C88 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1170B1421DE40CC4008F221F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1170B1411DE40CC4008F221F /* Fraiche.app */,
+				1183F9D61DE8CD3E007EF94A /* FraicheTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1170B1431DE40CC4008F221F /* Fraiche */ = {
+			isa = PBXGroup;
+			children = (
+				1170B1481DE40CC4008F221F /* Main.storyboard */,
+				1170B1441DE40CC4008F221F /* AppDelegate.swift */,
+				110D16171DE57B170040CCAD /* Managers */,
+				110D160F1DE57A580040CCAD /* Models */,
+				110D16161DE57AF00040CCAD /* ViewControllers */,
+				1183F9CE1DE8CA37007EF94A /* Misc */,
+			);
+			path = Fraiche;
+			sourceTree = "<group>";
+		};
+		1183F9CE1DE8CA37007EF94A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				1170B14B1DE40CC4008F221F /* Assets.xcassets */,
+				1170B1501DE40CC4008F221F /* Info.plist */,
+				1170B14D1DE40CC4008F221F /* LaunchScreen.storyboard */,
+				113230E31DE4124E00953841 /* Fraiche.entitlements */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		1183F9D11DE8CB12007EF94A /* FraicheTests */ = {
+			isa = PBXGroup;
+			children = (
+				1183F9CF1DE8CAF3007EF94A /* FraicheTests.swift */,
+			);
+			name = FraicheTests;
+			sourceTree = "<group>";
+		};
+		1183F9D71DE8CD3E007EF94A /* FraicheTests */ = {
+			isa = PBXGroup;
+			children = (
+				1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */,
+				1183F9DA1DE8CD3E007EF94A /* Info.plist */,
+			);
+			path = FraicheTests;
+			sourceTree = "<group>";
+		};
+		25FC8844A4DB459ADA16F328 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE8B2D7DCF8EBEE1002FE3FC /* Pods-Fraiche.debug.xcconfig */,
+				5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D3661BD8C6297F44A47E0C88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1170B1401DE40CC4008F221F /* Fraiche */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1170B1531DE40CC4008F221F /* Build configuration list for PBXNativeTarget "Fraiche" */;
+			buildPhases = (
+				10E4D7045EA5E8066E93BCBA /* [CP] Check Pods Manifest.lock */,
+				1170B13D1DE40CC4008F221F /* Sources */,
+				1170B13E1DE40CC4008F221F /* Frameworks */,
+				1170B13F1DE40CC4008F221F /* Resources */,
+				C43F162804190C7012FED73F /* [CP] Embed Pods Frameworks */,
+				C9DA2EBFB2C0A67E3A199D93 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fraiche;
+			productName = Fraiche;
+			productReference = 1170B1411DE40CC4008F221F /* Fraiche.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1183F9D51DE8CD3E007EF94A /* FraicheTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1183F9DD1DE8CD3E007EF94A /* Build configuration list for PBXNativeTarget "FraicheTests" */;
+			buildPhases = (
+				1183F9D21DE8CD3E007EF94A /* Sources */,
+				1183F9D31DE8CD3E007EF94A /* Frameworks */,
+				1183F9D41DE8CD3E007EF94A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1183F9DC1DE8CD3E007EF94A /* PBXTargetDependency */,
+			);
+			name = FraicheTests;
+			productName = FraicheTests;
+			productReference = 1183F9D61DE8CD3E007EF94A /* FraicheTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1170B1391DE40CC4008F221F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Milad ";
+				TargetAttributes = {
+					1170B1401DE40CC4008F221F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = V7LNKYNJ2Z;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					1183F9D51DE8CD3E007EF94A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = V7LNKYNJ2Z;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1170B1401DE40CC4008F221F;
+					};
+				};
+			};
+			buildConfigurationList = 1170B13C1DE40CC4008F221F /* Build configuration list for PBXProject "Fraiche" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1170B1381DE40CC4008F221F;
+			productRefGroup = 1170B1421DE40CC4008F221F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1170B1401DE40CC4008F221F /* Fraiche */,
+				1183F9D51DE8CD3E007EF94A /* FraicheTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1170B13F1DE40CC4008F221F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1170B14F1DE40CC4008F221F /* LaunchScreen.storyboard in Resources */,
+				1170B14C1DE40CC4008F221F /* Assets.xcassets in Resources */,
+				1170B14A1DE40CC4008F221F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1183F9D41DE8CD3E007EF94A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10E4D7045EA5E8066E93BCBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C43F162804190C7012FED73F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9DA2EBFB2C0A67E3A199D93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1170B13D1DE40CC4008F221F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1183F9E21DE8DA1D007EF94A /* LoginViewController.swift in Sources */,
+				110D161F1DE57BAD0040CCAD /* UsersManager.swift in Sources */,
+				110D16191DE57B350040CCAD /* ManagerBase.swift in Sources */,
+				113230E51DE5693A00953841 /* ProfileViewController.swift in Sources */,
+				110D16231DE57C610040CCAD /* MarketViewController.swift in Sources */,
+				110D161D1DE57B920040CCAD /* PostsManager.swift in Sources */,
+				110D16131DE57A930040CCAD /* Posts.swift in Sources */,
+				110D16111DE57A6C0040CCAD /* ModelBase.swift in Sources */,
+				110D161B1DE57B730040CCAD /* ServerAPIManager.swift in Sources */,
+				110D16151DE57AB10040CCAD /* Users.swift in Sources */,
+				1170B1451DE40CC4008F221F /* AppDelegate.swift in Sources */,
+				110D16211DE57C3B0040CCAD /* PostViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1183F9D21DE8CD3E007EF94A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1183F9D91DE8CD3E007EF94A /* FraicheTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1183F9DC1DE8CD3E007EF94A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1170B1401DE40CC4008F221F /* Fraiche */;
+			targetProxy = 1183F9DB1DE8CD3E007EF94A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1170B1481DE40CC4008F221F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1170B1491DE40CC4008F221F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1170B14D1DE40CC4008F221F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1170B14E1DE40CC4008F221F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1170B1511DE40CC4008F221F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1170B1521DE40CC4008F221F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1170B1541DE40CC4008F221F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE8B2D7DCF8EBEE1002FE3FC /* Pods-Fraiche.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Fraiche/Fraiche.entitlements;
+				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
+				INFOPLIST_FILE = Fraiche/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.Fraiche;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1170B1551DE40CC4008F221F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Fraiche/Fraiche.entitlements;
+				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
+				INFOPLIST_FILE = Fraiche/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.Fraiche;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1183F9DE1DE8CD3E007EF94A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
+				INFOPLIST_FILE = FraicheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.FraicheTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fraiche.app/Fraiche";
+			};
+			name = Debug;
+		};
+		1183F9DF1DE8CD3E007EF94A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
+				INFOPLIST_FILE = FraicheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.FraicheTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fraiche.app/Fraiche";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1170B13C1DE40CC4008F221F /* Build configuration list for PBXProject "Fraiche" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1170B1511DE40CC4008F221F /* Debug */,
+				1170B1521DE40CC4008F221F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1170B1531DE40CC4008F221F /* Build configuration list for PBXNativeTarget "Fraiche" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1170B1541DE40CC4008F221F /* Debug */,
+				1170B1551DE40CC4008F221F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1183F9DD1DE8CD3E007EF94A /* Build configuration list for PBXNativeTarget "FraicheTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1183F9DE1DE8CD3E007EF94A /* Debug */,
+				1183F9DF1DE8CD3E007EF94A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1170B1391DE40CC4008F221F /* Project object */;
+}
