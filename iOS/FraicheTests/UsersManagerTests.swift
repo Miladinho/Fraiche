@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 @testable import Fraiche
 
-class UserManagerTests: XCTestCase {
+class UsersManagerTests: XCTestCase {
     
     var vc : UsersManager!
     
