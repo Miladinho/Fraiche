@@ -21,8 +21,9 @@
 		1170B14A1DE40CC4008F221F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1170B1481DE40CC4008F221F /* Main.storyboard */; };
 		1170B14C1DE40CC4008F221F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1170B14B1DE40CC4008F221F /* Assets.xcassets */; };
 		1170B14F1DE40CC4008F221F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1170B14D1DE40CC4008F221F /* LaunchScreen.storyboard */; };
-		1183F9D91DE8CD3E007EF94A /* FraicheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */; };
 		1183F9E21DE8DA1D007EF94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */; };
+		1183F9E31DE8E71B007EF94A /* UsersManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9CF1DE8CAF3007EF94A /* UsersManagerTests.swift */; };
+		94BBC3E6E1D81BD798404257 /* Pods_FraicheTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB08C5BE4C1FD04B18C7874 /* Pods_FraicheTests.framework */; };
 		ED1248B460DCDAE80E067CA5 /* Pods_Fraiche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,12 +55,14 @@
 		1170B14B1DE40CC4008F221F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1170B14E1DE40CC4008F221F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1170B1501DE40CC4008F221F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1183F9CF1DE8CAF3007EF94A /* FraicheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FraicheTests.swift; path = FraicheTests/FraicheTests.swift; sourceTree = "<group>"; };
+		1183F9CF1DE8CAF3007EF94A /* UsersManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersManagerTests.swift; sourceTree = "<group>"; };
 		1183F9D61DE8CD3E007EF94A /* FraicheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FraicheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FraicheTests.swift; sourceTree = "<group>"; };
 		1183F9DA1DE8CD3E007EF94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fraiche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche.release.xcconfig"; sourceTree = "<group>"; };
+		5FB08C5BE4C1FD04B18C7874 /* Pods_FraicheTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FraicheTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77517F9604B00C46468A9911 /* Pods-FraicheTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FraicheTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FraicheTests/Pods-FraicheTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BC85B8ECBDAF9DF939363A8C /* Pods-FraicheTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FraicheTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FraicheTests/Pods-FraicheTests.release.xcconfig"; sourceTree = "<group>"; };
 		BE8B2D7DCF8EBEE1002FE3FC /* Pods-Fraiche.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fraiche.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche.debug.xcconfig"; sourceTree = "<group>"; };
 		CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fraiche.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BBC3E6E1D81BD798404257 /* Pods_FraicheTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +122,6 @@
 		1170B1381DE40CC4008F221F = {
 			isa = PBXGroup;
 			children = (
-				1183F9D11DE8CB12007EF94A /* FraicheTests */,
 				1170B1431DE40CC4008F221F /* Fraiche */,
 				1183F9D71DE8CD3E007EF94A /* FraicheTests */,
 				1170B1421DE40CC4008F221F /* Products */,
@@ -160,18 +163,10 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
-		1183F9D11DE8CB12007EF94A /* FraicheTests */ = {
-			isa = PBXGroup;
-			children = (
-				1183F9CF1DE8CAF3007EF94A /* FraicheTests.swift */,
-			);
-			name = FraicheTests;
-			sourceTree = "<group>";
-		};
 		1183F9D71DE8CD3E007EF94A /* FraicheTests */ = {
 			isa = PBXGroup;
 			children = (
-				1183F9D81DE8CD3E007EF94A /* FraicheTests.swift */,
+				1183F9CF1DE8CAF3007EF94A /* UsersManagerTests.swift */,
 				1183F9DA1DE8CD3E007EF94A /* Info.plist */,
 			);
 			path = FraicheTests;
@@ -182,6 +177,8 @@
 			children = (
 				BE8B2D7DCF8EBEE1002FE3FC /* Pods-Fraiche.debug.xcconfig */,
 				5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */,
+				77517F9604B00C46468A9911 /* Pods-FraicheTests.debug.xcconfig */,
+				BC85B8ECBDAF9DF939363A8C /* Pods-FraicheTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -190,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */,
+				5FB08C5BE4C1FD04B18C7874 /* Pods_FraicheTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1183F9DD1DE8CD3E007EF94A /* Build configuration list for PBXNativeTarget "FraicheTests" */;
 			buildPhases = (
+				EB1009EFE6E315478AE6E284 /* [CP] Check Pods Manifest.lock */,
 				1183F9D21DE8CD3E007EF94A /* Sources */,
 				1183F9D31DE8CD3E007EF94A /* Frameworks */,
 				1183F9D41DE8CD3E007EF94A /* Resources */,
+				93343E82CFD509A5485C0676 /* [CP] Embed Pods Frameworks */,
+				EC08DDAC345B36EC708D77CC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -318,6 +319,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		93343E82CFD509A5485C0676 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FraicheTests/Pods-FraicheTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C43F162804190C7012FED73F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -348,6 +364,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EB1009EFE6E315478AE6E284 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EC08DDAC345B36EC708D77CC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FraicheTests/Pods-FraicheTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -374,7 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1183F9D91DE8CD3E007EF94A /* FraicheTests.swift in Sources */,
+				1183F9E31DE8E71B007EF94A /* UsersManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +577,7 @@
 		};
 		1183F9DE1DE8CD3E007EF94A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77517F9604B00C46468A9911 /* Pods-FraicheTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
@@ -545,6 +592,7 @@
 		};
 		1183F9DF1DE8CD3E007EF94A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC85B8ECBDAF9DF939363A8C /* Pods-FraicheTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = V7LNKYNJ2Z;

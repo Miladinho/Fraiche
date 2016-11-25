@@ -1,6 +1,15 @@
 platform :ios, '8.0'
 use_frameworks!
-target ‘Fraiche’ do
+
+def available_pods
   pod 'FBSDKCoreKit', '~> 4.9’
   pod 'FBSDKLoginKit'
+end
+
+target ‘Fraiche’ do
+	available_pods
+end
+
+target 'FraicheTests' do
+	available_pods
 end

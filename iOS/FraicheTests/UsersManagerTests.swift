@@ -10,15 +10,16 @@ import XCTest
 import UIKit
 @testable import Fraiche
 
-class FraicheTests: XCTestCase {
+class UserManagerTests: XCTestCase {
     
-    var vc : UIViewController!
+    var vc : UsersManager!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        vc = storyboard.instantiateInitialViewController() as! LoginViewController
+        //let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        //vc = storyboard.instantiateInitialViewController() as!
+        
+        self.vc = UsersManager()
     }
     
     override func tearDown() {
