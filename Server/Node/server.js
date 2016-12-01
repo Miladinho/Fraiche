@@ -44,7 +44,7 @@ app.post('/api/1/auth', function(request, response) {
   var username = creds[0];
   var password = creds[1];
   console.log(creds[0]+" "+creds[1])
-  
+
 })
 
 app.post('/api/1/posts', function(request, response) {
@@ -68,7 +68,18 @@ app.get('/api/1/posts', function(request, response) {
   })
 })
 
-app.delete('/api/1/posts', function(request, response) {
-
+app.delete('/api/1/posts/:id', function(request, response) {
+  Post.findById(request.params.id).then(function(post) {
+    if (post) {
+      post.destroy().then(function(song) {
+        response.json(song)
+      })
+    } else {
+      response.status(404).json({
+        message: 'Post not found'
+      })
+    }
+  })
 })
+
 app.listen(3000)
