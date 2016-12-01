@@ -13,6 +13,6 @@
   },
 
   "scripts": {
-    "tests": "./node_modules/mocha/bin/mocha path/to/tests"
+    "test": "./node_modules/mocha/bin/mocha tests"
   }
 }
