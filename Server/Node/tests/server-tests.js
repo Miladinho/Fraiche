@@ -1,8 +1,8 @@
 var expect = require('chai').expect
 var request  = require('superagent')
 
-describe("sample", function() {
-  it("should do something", function(done) {
-    request.post
+describe("POST to /api/1/posts", function() {
+  it("should create new post", function(done) {
+    //request.
   })
 })

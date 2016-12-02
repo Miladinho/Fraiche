@@ -64,7 +64,11 @@ app.post('/api/1/posts', function(request, response) {
 app.get('/api/1/posts', function(request, response) {
   var promise = Post.findAll()
   promise.then(function(posts) {
-    response.json(posts)
+    response.status(200).json(posts)
+  }).catch(function() {
+    response.status(500).json({
+      message: "Error fetching posts from database."
+    })
   })
 })
 
@@ -79,7 +83,35 @@ app.delete('/api/1/posts/:id', function(request, response) {
         message: 'Post not found'
       })
     }
+  }).catch(function() {
+    response.status(500).json({
+      message: "Error fetching posts from database."
+    })
   })
+})
+
+app.put("/api/1/posts/:id", function(request,response) {
+
+  Post.findById(request.params.id).then(function(post) {
+    var title = post.title
+    var description = post.description
+    console.log(title)
+    if (post) {
+      if (request.body.title == "") {
+        //post.update({})
+
+      }
+    } else {
+      response.status(404).json({
+        message: "Post not found."
+      })
+    }
+  }).catch(function() {
+    response.status(500).json({
+      message: "Error fetching posts from database."
+    })
+  })
+
 })
 
 app.listen(3000)
