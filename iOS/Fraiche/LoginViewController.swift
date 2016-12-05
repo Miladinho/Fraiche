@@ -50,9 +50,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             //errorMessageLabel.text = "\(error)"
             
         } else if(result.token != nil) {
+            //check if user exists
+            
+            // else create user
             self.dismiss(animated: true, completion: nil)
-            //var profileVC = ProfileViewController()
-            //self.performSegue(withIdentifier: "loginToProfileSegue", sender: self)
+            //print(result.value(forKey: "data"))
             
         } else {
             //errorMessageLabel.text = "Unknown error occured"
@@ -65,10 +67,39 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-        
+        print("logged out")
     }
 
+    func returnUserData()
+    {
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+            
+            if ((error) != nil)
+            {
+                // Process error
+                print("****Error: \(error)")
+                //self.alert.message = error?.localizedDescription
+                //self.present(self.alert, animated: true, completion: nil)
+            }
+            else
+            {
+                let resultDict = result as! NSDictionary
+                print("fetched user: \(result)")
+                let userName : NSString = resultDict.value(forKey: "name") as! NSString
+                print("User Name is: \(userName)")
+                let userId : NSString = resultDict.value(forKeyPath: "id") as! NSString
+                print("User Id is: \(userId)")
+                if resultDict.value(forKeyPath: "email") == nil {
+                    print("email is nil")
+                } else {
+                    let userEmail : NSString = resultDict.value(forKeyPath: "email") as! NSString
+                    print("User email is: \(userEmail)")
+                }
+
+            }
+        })
+    }
 
 }
 
