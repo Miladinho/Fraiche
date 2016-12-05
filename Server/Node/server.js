@@ -27,6 +27,25 @@ var Post = sequelize.define('post', {
   timestamps: false
 })
 
+var User = sequelize.define('user', {
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true
+  },
+  facebookID: {
+    type: Sequelize.STRING,
+    field: "facebook_id"
+  },
+  fullname: {
+    type: Sequelize.STRING
+  },
+  email: {
+    type: Sequelize.STRING
+  }
+}, {
+  timestamps: false
+})
+
 app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -34,7 +53,7 @@ app.use(bodyParser.urlencoded({
 }))
 //app.use(bodyParser())
 
-app.post('/api/1/auth', function(request, response) {
+app.post('/api/1/test', function(request, response) {
   var encodedAuth = request.headers['authorization']
   var tmp = encodedAuth.split(' ');   // Split on a space, the original auth looks like  "Basic Y2hhcmxlczoxMjM0NQ==" and we need the 2nd part
   var buf = new Buffer(tmp[1], 'base64'); // create a buffer and tell it the data coming in is base64
@@ -47,6 +66,21 @@ app.post('/api/1/auth', function(request, response) {
 
 })
 
+app.post('/api/1/user/create/fb', function(request,response) {
+  var user = User.build({
+    facebookID: request.body.facebookID,
+    fullname: request.body.fullname,
+    email: request.body.email
+  })
+
+  user.save().then(function() {
+    response.json(user)
+  }).catch(function(error) {
+    response.status(500).json(error)
+  })
+})
+
+
 app.post('/api/1/posts', function(request, response) {
   //response.json(request.body)
   console.log(request.body)
@@ -58,6 +92,8 @@ app.post('/api/1/posts', function(request, response) {
 
   post.save().then(function() {
     response.json(post)
+  }).catch(function(error) {
+    response.status(500).json(error)
   })
 })
 
@@ -72,11 +108,27 @@ app.get('/api/1/posts', function(request, response) {
   })
 })
 
+app.get('/api/1/users/:id', function(request,response) {
+  User.findById(request.params.id).then(function(user) {
+    if (user) {
+        response.json(user)
+    } else {
+      response.status(404).json({
+        message: "User not found"
+      })
+    }
+  }).catch(function() {
+    response.status(500).json({
+      message: "Error fetching users from database."
+    })
+  })
+})
+
 app.delete('/api/1/posts/:id', function(request, response) {
   Post.findById(request.params.id).then(function(post) {
     if (post) {
-      post.destroy().then(function(song) {
-        response.json(song)
+      post.destroy().then(function(post) {
+        response.json(post)
       })
     } else {
       response.status(404).json({
@@ -95,12 +147,20 @@ app.put("/api/1/posts/:id", function(request,response) {
   Post.findById(request.params.id).then(function(post) {
     var title = post.title
     var description = post.description
-    console.log(title)
+    //console.log(title)
     if (post) {
-      if (request.body.title == "") {
-        //post.update({})
-
+      if (request.body.title != "") {
+        title = request.body.title
       }
+      if (request.body.title != "") {
+        description = request.body.description
+      }
+      post.update({
+        title: title,
+        description: description
+      }).then(function() {
+        response.status(200).json(post)
+      })
     } else {
       response.status(404).json({
         message: "Post not found."
