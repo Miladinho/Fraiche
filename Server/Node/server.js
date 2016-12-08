@@ -66,15 +66,38 @@ app.post('/api/1/test', function(request, response) {
 
 })
 
+// authenticate user
+app.post('/api/1/user/auth', function(request,response) {
+  var user = User.findAll({
+    where: {
+      facebookID: request.body.facebook_id
+    }
+  }).then(function(value) {
+    //console.log(value)
+    if (value.length == 0) {
+      response.status(404).json({
+        message: "User not found!"
+      })
+    } else {
+      response.status(200).json(value)
+    }
+  })
+})
+
 app.post('/api/1/user/create/fb', function(request,response) {
   var user = User.build({
-    facebookID: request.body.facebookID,
+    facebookID: request.body.facebook_id,
     fullname: request.body.fullname,
     email: request.body.email
   })
 
-  user.save().then(function() {
-    response.json(user)
+  user.save().then(function(result) {
+    response.status(200).json([result])
+  }, function(error) {
+    console.log(error)
+    response.status(400).json({
+      message: error
+    })
   }).catch(function(error) {
     response.status(500).json(error)
   })
@@ -97,15 +120,64 @@ app.post('/api/1/posts', function(request, response) {
   })
 })
 
-app.get('/api/1/posts', function(request, response) {
-  var promise = Post.findAll()
-  promise.then(function(posts) {
-    response.status(200).json(posts)
+// get user posts
+app.get('/api/1/users/:userid', function(request, response) {
+  console.log(request.params)
+  var userPosts = Post.findAll({
+    where: {
+      userid: request.params.userid
+    }
+  }).then(function(userPost) {
+    response.status(200).json(userPost)
   }).catch(function() {
     response.status(500).json({
       message: "Error fetching posts from database."
     })
   })
+})
+
+app.get('/api/1/posts/:postid', function(request, response) {
+  var post = Post.findAll({
+    where: {
+      id: request.params.postid
+    }
+  }).then(function(post) {
+    response.status(200).json([post])
+  }).catch(function(error) {
+    response.status(500).json({
+      message: error
+    })
+  })
+})
+
+app.get('/api/1/posts', function(request, response) {
+  if (request.query.user) {
+    var userPosts = Post.findAll({
+      where: {
+        userid: request.query.user
+      }
+    })
+    userPosts.then(function(userPost) {
+      response.status(200).json(userPost)
+    }).catch(function() {
+      response.status(500).json({
+        message: "Error fetching posts from database."
+      })
+    })
+  } else {
+    var promise = Post.findAll()
+    promise.then(function(posts) {
+      response.status(200).json(posts)
+    },function(error) {
+      response.status(400).json({
+        message: error
+      })
+    }).catch(function() {
+      response.status(500).json({
+        message: "Error fetching posts from database."
+      })
+    })
+  }
 })
 
 app.get('/api/1/users/:id', function(request,response) {
@@ -128,7 +200,7 @@ app.delete('/api/1/posts/:id', function(request, response) {
   Post.findById(request.params.id).then(function(post) {
     if (post) {
       post.destroy().then(function(post) {
-        response.json(post)
+        response.status(200).json(post)
       })
     } else {
       response.status(404).json({
