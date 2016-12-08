@@ -121,7 +121,7 @@ app.post('/api/1/posts', function(request, response) {
 })
 
 // get user posts
-app.get('/api/1/users/:userid', function(request, response) {
+app.get('/api/1/posts/users/:userid', function(request, response) {
   console.log(request.params)
   var userPosts = Post.findAll({
     where: {
