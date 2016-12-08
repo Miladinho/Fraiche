@@ -14,9 +14,26 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    var loadingView : UIView!
+    var actInd : UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loadingView = UIView()
+        loadingView!.frame = CGRect(x: 0,y: 0, width: 100, height: 80)
+        loadingView?.center = view.center
+        loadingView?.alpha = 0.6
+        loadingView?.backgroundColor = UIColor.black
+        loadingView.layer.cornerRadius = 10
+        loadingView.isHidden = true
+        view.addSubview(loadingView)
+        
+        actInd = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: 150, height: 150)) as UIActivityIndicatorView
+        actInd.center = self.view.center
+        actInd.hidesWhenStopped = true
+        actInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        view.addSubview(actInd)
 
         self.navigationItem.title = "Market"
         
@@ -80,24 +97,37 @@ class MarketViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+        let contact = UITableViewRowAction(style: .normal, title: "Contact") { action, index in
             
             let post : Post = (self.posts?[indexPath.row])!
             
-            PostsManager.deletePost(post, withHandler: {success,error in
+            let user = User()
+            user.cId = post.cUserId
+            
+            self.loadingView.isHidden = false
+            self.actInd.startAnimating()
+            UsersManager.getUser(user, withHandler: {
+                (success,user) -> () in
                 
-                DispatchQueue.main.async(execute: {
-                    () -> Void in
-                    self.posts.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                    //self.tableView.reloadData()
-                    
+                let alert : UIAlertController = UIAlertController(title: "Contact Info", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertActionStyle.default) { (_) in
+                    self.loadingView.isHidden = true
+                    self.actInd.stopAnimating()
                 })
-                print("Done deleting.")
+                
+                if success {
+                    alert.message = "Contact \(user!.cFullname!) at \(user!.cEmail!)"
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    print("failed data load for user contact info")
+                    alert.message = "Unable to retrieve contact info for this post :("
+                    self.present(alert, animated: true, completion: nil)
+                }
             })
+
             
         }
-        return [delete]
+        return [contact]
     }
 
 }

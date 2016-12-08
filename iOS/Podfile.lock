@@ -9,16 +9,19 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.11.0):
     - FBSDKCoreKit
+  - GoogleMaps (1.13.0)
 
 DEPENDENCIES:
   - FBSDKCoreKit (~> 4.9)
   - FBSDKLoginKit
+  - GoogleMaps
 
 SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   FBSDKCoreKit: 686ac982723a14ec9ddb85e2f81235d7706c891b
   FBSDKLoginKit: bade9fc78277764149ccc5bfaadbf13c83175c6a
+  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
 
-PODFILE CHECKSUM: 5046a363d1a9ab3a51660771751ed9d06883af44
+PODFILE CHECKSUM: 2152d30e9cbabb8df4ffd399dd74a5d1b77c9034
 
 COCOAPODS: 1.0.1

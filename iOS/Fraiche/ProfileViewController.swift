@@ -11,7 +11,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import CoreData
 import CoreLocation
-import MapKit
+import GoogleMaps
 
 
 class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
@@ -28,6 +28,9 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITable
     
     var locationManager: CLLocationManager!
     var geocoder: CLGeocoder!
+    
+    var alert : UIAlertController!
+    
     // Core Data
     var managedObjectContext : NSManagedObjectContext!
     
@@ -36,6 +39,10 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITable
         super.viewDidLoad()
         print("viewDidLoad")
         
+        alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Got it!", style: UIAlertActionStyle.default) { (_) in
+            
+        })
         
         locationManager = CLLocationManager()
         locationManager.delegate = self
@@ -62,10 +69,10 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITable
         self.navigationItem.title = UsersManager.currentUser.cFullname
         self.userEmailLabel.text = UsersManager.currentUser.cEmail
         
+        
         print("viewDidLoad currentUser.cFacebookId = \(UsersManager.currentUser.cFacebookId)")
-        if(/*FBSDKAccessToken.current() == nil*/ UsersManager.currentUser == nil) {
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let loginViewController = storyBoard.instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
+        if(FBSDKAccessToken.current() == nil || UsersManager.currentUser == nil) {
+            let loginViewController = LoginViewController()
             self.present(loginViewController, animated:true, completion:nil)
             //return
         }
@@ -204,19 +211,11 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITable
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
             
             let post : Post = (self.userPosts[indexPath.row])
-            
-            PostsManager.updatePost(post, withHandler: {success,error in
-                
-                DispatchQueue.main.async(execute: {
-                    () -> Void in
-                    //self.userPosts.remove(at: indexPath.row)
-                    let loginPageView = self.storyboard?.instantiateViewController(withIdentifier: "postViewController") as! PostViewController
-                    self.navigationController?.pushViewController(loginPageView, animated: true)
-                    self.tableView.reloadData()
-                    
-                })
-                print("Done editing.")
-            })
+            let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "postViewController") as! PostViewController
+            postViewController.editMode = true
+            postViewController.editPost = post
+            print(self.userPosts[index.row].cTitle!)
+            self.navigationController?.pushViewController(postViewController, animated: true)
             
         }
         return [delete, edit]
@@ -229,7 +228,20 @@ class ProfileViewController: UIViewController, FBSDKLoginButtonDelegate, UITable
                 if CLLocationManager.isMonitoringAvailable(for: CLBeaconRegion.self) {
                     if CLLocationManager.isRangingAvailable() {
                         // geocode location and get city name from location
-                        self.userLocationLabel.text = "got location"
+                        let geocoder = GMSGeocoder()
+                        geocoder.reverseGeocodeCoordinate((self.locationManager.location?.coordinate)!) { response, error in
+                            if let resp = response {
+                                let x = resp.firstResult()
+                                // get a string result in the format: number street city, state(two letter) zipcode
+                                // ex) 800-898 W 34th St Los Angeles, CA 90007   expected format in dB
+                                //let responseAddress = (x!.lines[0] as! String) + " " + (x?.lines[1] as! String)
+                                //self.userLocationLabel = responseAddress
+                                //print(responseAddress)
+                            } else if let err = error {
+                                // most likeley caused by error code -1009 (Google) "The internet conection appears to be offline"
+                                
+                            }
+                        }
                     }
                 } else {
                     self.userLocationLabel.text = "location monitoring not available"

@@ -14,7 +14,7 @@ class PostsManager : ManagerBase {
     class func readPostsWithHandler(_ user: User? = nil, _ callback:@escaping (_ posts : Array<Post>?, _ error: AnyObject?)->()){
         var resourceURL : String!
         if user != nil {
-            resourceURL = "users/\(user!.cId!)"
+            resourceURL = "posts/users/\(user!.cId!)"
         } else {
             resourceURL = "posts"
         }
@@ -94,7 +94,7 @@ class PostsManager : ManagerBase {
         let postData = post.toDictionary()
         
         // create the resource
-        ServerAPIManager.sharedInstance.updateResource("posts/\(post.cId?.intValue)", data: postData) {
+        ServerAPIManager.sharedInstance.updateResource("posts/\(post.cId!.intValue)", data: postData) {
             (data, error) -> () in
             
             if error != nil{

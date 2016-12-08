@@ -12,7 +12,8 @@ class ServerAPIManager : ManagerBase{
     
     static var instance : ServerAPIManager!
     
-    let baseUrl = "http://localhost:3000/api/1"
+    //let baseUrl = "http://localhost:3000/api/1"
+    let baseUrl = "http://ec2-35-163-70-242.us-west-2.compute.amazonaws.com/api/1"
     
     enum Resources : String {
         case Posts = "posts",
@@ -37,8 +38,8 @@ class ServerAPIManager : ManagerBase{
                 callback(nil, error as AnyObject?)
             } else {
                 //test
-                //let json = NSString(data: data!, encoding: String.Encoding.utf8.rawValue /*String.Encoding.isoLatin1.rawValue*/)
-                //print("PRINTING DATA \(json)")
+                let json = NSString(data: data!, encoding: String.Encoding.utf8.rawValue /*String.Encoding.isoLatin1.rawValue*/)
+                print("PRINTING DATA \(json)")
                 
                 if let data = data{
                     print("printing data from readResource \(data)")

@@ -4,6 +4,7 @@ use_frameworks!
 def available_pods
   pod 'FBSDKCoreKit', '~> 4.9’
   pod 'FBSDKLoginKit'
+  pod ‘GoogleMaps’
 end
 
 target ‘Fraiche’ do

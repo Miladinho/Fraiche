@@ -379,7 +379,7 @@
         <!--Login View Controller-->
         <scene sceneID="H7Z-ww-3Ko">
             <objects>
-                <viewController storyboardIdentifier="loginViewCOntroller" id="xjx-9M-11h" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xjx-9M-11h" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="032-iW-QwA"/>
                         <viewControllerLayoutGuide type="bottom" id="fWR-Ld-P6F"/>
@@ -388,7 +388,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4EE6D4D2-D54F-4A0B-84E7-54128E0AFA49" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-Pt-BjS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="89C3314C-BA69-4C96-8EAA-BD4D11750D96" translatesAutoresizingMaskIntoConstraints="NO" id="Azh-Pt-BjS">
                                 <frame key="frameInset" minX="-165" minY="-12" width="715" height="679"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -423,7 +423,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4EE6D4D2-D54F-4A0B-84E7-54128E0AFA49" width="479" height="319">
+        <image name="89C3314C-BA69-4C96-8EAA-BD4D11750D96" width="479" height="319">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -136,6 +136,21 @@ app.get('/api/1/posts/users/:userid', function(request, response) {
   })
 })
 
+// GET USER FROM ID
+app.get('/api/1/users/:userid',function(request,response) {
+  var user = User.findAll({
+    where: {
+      id: request.params.userid
+    }
+  }).then(function(user) {
+    response.status(200).json(user)
+  }).catch(function() {
+    response.status(500).json({
+      message: "Error fetching posts from database."
+    })
+  })
+})
+
 app.get('/api/1/posts/:postid', function(request, response) {
   var post = Post.findAll({
     where: {

@@ -61,6 +61,28 @@ class UsersManager : ManagerBase {
         
     }
     
+    class func getUser(_ user : User, withHandler callback: @escaping (_ success : Bool, _ user: User?) -> Void){
+        
+        ServerAPIManager.sharedInstance.readResource("users/\(user.cId!)", callback: {
+            (data, error) -> () in
+            
+            print(data as? Array<NSDictionary>)
+            if error != nil{
+                callback(false, nil)
+            }else {
+                if let data = data {
+                    let user = getSingleUserFromData(data: data as AnyObject?)
+                    //print("usermanager user: \(user!.cFacebookId)")
+                    callback(true, user)
+                    
+                }else{
+                    callback(false,nil)
+                }
+            }
+        
+        })
+    }
+    
     class func getSingleUserFromData(data: AnyObject?) -> User? {
         var users : Array<User> = [User]()
         if let items = data as? Array<NSDictionary> {

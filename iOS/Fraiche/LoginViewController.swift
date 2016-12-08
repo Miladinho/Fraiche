@@ -32,14 +32,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.fbLoginButton.frame = CGRect(x: 40.0, y: h-80.0, width: w-80.0, height: 40.0)
         self.fbLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
         self.fbLoginButton.delegate = self
-        //self.view.addSubview(self.fbLoginButton)
         
         //self.view.backgroundColor = UIColor.black
         
-        let loginImage = UIImage(imageLiteralResourceName: "LoginIcon")
+        let loginImage = UIImage(imageLiteralResourceName: "FraicheLoginPhoto")
         self.loginImageView = UIImageView(image: loginImage)
-        self.loginImageView.frame = CGRect(x: w*0.5, y: h*0.4, width: 100.0, height: 100.0)
-        //self.view.addSubview(self.loginImageView)
+        self.loginImageView.frame = CGRect(x: 0, y: 0, width: w, height: h)
+        
+        self.view.addSubview(self.loginImageView)
+        self.view.addSubview(self.fbLoginButton)
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
 
     func setupFbUser() {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name"])
+        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email,name,"]) //picture.type(large) for photo
         graphRequest.start(completionHandler: {
             
             (connection, result, error) -> Void in
@@ -86,6 +87,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             {
                 let resultDict = result as! NSDictionary
                 let user = User()
+                
+//                if let imageURL = resultDict.value("picture").value("data").value("url") as! String {
+//                    print("image URL = \(imageURL)")
+//                }
                 
                 print("fetched user: \(result)")
                 

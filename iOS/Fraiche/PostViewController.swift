@@ -16,6 +16,9 @@ class PostViewController: UIViewController {
     var alert : UIAlertController!
     var loadingView : UIView!
     
+    var editMode : Bool = false
+    var editPost : Post? = nil
+    
     override func loadView() {
         super.loadView()
         self.loadingView = UIView()
@@ -26,6 +29,13 @@ class PostViewController: UIViewController {
         loadingView.layer.cornerRadius = 10
         loadingView.isHidden = true
         
+        if (editMode && editPost != nil) {
+            self.postNameTextField.text = editPost!.cTitle
+            self.postDescriptionTextView.text = editPost!.cDescription
+            self.navigationItem.title = "Edit Post"
+        } else {
+            self.navigationItem.title = "Post Item"
+        }
         self.view.addSubview(loadingView)
     }
     override func viewDidLoad() {
@@ -33,10 +43,9 @@ class PostViewController: UIViewController {
         
         alert = UIAlertController(title: "Post Status", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default) { (_) in
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.dismiss(animated: true, completion: nil)
         })
         
-        self.navigationItem.title = "Post Item"
         self.postDescriptionTextView.layer.borderColor = UIColor.black.cgColor
         self.postDescriptionTextView.layer.borderWidth = 1.0
     }
@@ -47,10 +56,6 @@ class PostViewController: UIViewController {
     }
     
     @IBAction func createPostButtonTouched(_ sender: AnyObject) {
-        let post : Post = Post()
-        post.cUserId = UsersManager.currentUser.cId
-        post.cTitle = postNameTextField.text
-        post.cDescription = postDescriptionTextView.text
         
         let actInd : UIActivityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0,y: 0, width: 150, height: 150)) as UIActivityIndicatorView
         actInd.center = self.view.center
@@ -62,24 +67,52 @@ class PostViewController: UIViewController {
         actInd.startAnimating()
         self.loadingView.isHidden = false
         
-        PostsManager.createPost(post, withHandler: {
-            (success, post) -> () in
-            
-            DispatchQueue.main.async(execute: {
-                () -> Void in
+        if (editMode && editPost != nil) {
+    
+            editPost!.cTitle = postNameTextField.text
+            editPost!.cDescription = postDescriptionTextView.text
+            PostsManager.updatePost(editPost!, withHandler: {
+                (success, post) -> () in
                 
-                actInd.stopAnimating()
-                if success {
-                    self.alert.message = "Post was succesful"
-                } else {
-                    self.alert.message = "Post was not succesful"
-                }
+                DispatchQueue.main.async(execute: {
+                    () -> Void in
                 
-                self.present(self.alert, animated: true, completion: nil)
-                self.loadingView.isHidden = true
+                    actInd.stopAnimating()
+                    if success {
+                    self.alert.message = "Edit was succesful"
+                    } else {
+                    self.alert.message = "Edit was not succesful"
+                    }
+                    
+                    self.present(self.alert, animated: true, completion: nil)
+                    self.loadingView.isHidden = true
                 
+                })
             })
-        })
+        } else {
+            let post : Post = Post()
+            post.cUserId = UsersManager.currentUser.cId
+            post.cTitle = postNameTextField.text
+            post.cDescription = postDescriptionTextView.text
+            PostsManager.createPost(post, withHandler: {
+                (success, post) -> () in
+                
+                DispatchQueue.main.async(execute: {
+                    () -> Void in
+                    
+                    actInd.stopAnimating()
+                    if success {
+                        self.alert.message = "Post was succesful"
+                    } else {
+                        self.alert.message = "Post was not succesful"
+                    }
+                    
+                    self.present(self.alert, animated: true, completion: nil)
+                    self.loadingView.isHidden = true
+                    
+                })
+            })
+        }
     }
 
 }
