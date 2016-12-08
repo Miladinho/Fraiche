@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Posts : ModelBase {
+class Post : ModelBase {
     var cId : NSNumber? // this is a dummy because neither Int? not NSNumber? would work...wtf!
     var cTitle : String?
     var cDescription : String?
@@ -21,7 +21,7 @@ class Posts : ModelBase {
             "cId":"id",
             "cTitle":"title",
             "cDescription":"description",
-            "cUserId":"userId"
+            "cUserId":"userid"
         ]
         
         return objecMapping

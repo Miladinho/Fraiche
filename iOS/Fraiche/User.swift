@@ -9,20 +9,20 @@
 import Foundation
 
 
-class Users : ModelBase {
+class User : ModelBase {
     var cId : NSNumber? // this is a dummy because neither Int? not NSNumber? would work...wtf!
-    var cName : String?
-    var cMessage : String?
-    var cMessageDate : String?
+    var cFullname : String?
+    var cFacebookId : String?
+    var cEmail : String?
     
     
     override func objectMapping() -> Dictionary<String, String>{
         
         let objecMapping = [
             "cId":"id",
-            "cName":"name",
-            "cMessage":"message",
-            "cMessageDate":"message_date"
+            "cFullname":"fullname",
+            "cFacebookId":"facebook_id",
+            "cEmail":"email"
         ]
         
         return objecMapping

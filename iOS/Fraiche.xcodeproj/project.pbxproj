@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		110D16111DE57A6C0040CCAD /* ModelBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16101DE57A6C0040CCAD /* ModelBase.swift */; };
-		110D16131DE57A930040CCAD /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16121DE57A930040CCAD /* Posts.swift */; };
-		110D16151DE57AB10040CCAD /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16141DE57AB10040CCAD /* Users.swift */; };
+		110D16131DE57A930040CCAD /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16121DE57A930040CCAD /* Post.swift */; };
+		110D16151DE57AB10040CCAD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16141DE57AB10040CCAD /* User.swift */; };
 		110D16191DE57B350040CCAD /* ManagerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D16181DE57B350040CCAD /* ManagerBase.swift */; };
 		110D161B1DE57B730040CCAD /* ServerAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D161A1DE57B730040CCAD /* ServerAPIManager.swift */; };
 		110D161D1DE57B920040CCAD /* PostsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D161C1DE57B920040CCAD /* PostsManager.swift */; };
@@ -23,6 +23,8 @@
 		1170B14F1DE40CC4008F221F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1170B14D1DE40CC4008F221F /* LaunchScreen.storyboard */; };
 		1183F9E21DE8DA1D007EF94A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */; };
 		1183F9E31DE8E71B007EF94A /* UsersManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1183F9CF1DE8CAF3007EF94A /* UsersManagerTests.swift */; };
+		11BFE6A11DF8BBF3006AEA73 /* UserCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11BFE69F1DF8BBF3006AEA73 /* UserCoreData.xcdatamodeld */; };
+		11BFE6A31DF8F787006AEA73 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BFE6A21DF8F787006AEA73 /* EditPostViewController.swift */; };
 		94BBC3E6E1D81BD798404257 /* Pods_FraicheTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FB08C5BE4C1FD04B18C7874 /* Pods_FraicheTests.framework */; };
 		ED1248B460DCDAE80E067CA5 /* Pods_Fraiche.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC38ECEBB101AFB7B64FD666 /* Pods_Fraiche.framework */; };
 /* End PBXBuildFile section */
@@ -39,8 +41,8 @@
 
 /* Begin PBXFileReference section */
 		110D16101DE57A6C0040CCAD /* ModelBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelBase.swift; sourceTree = "<group>"; };
-		110D16121DE57A930040CCAD /* Posts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
-		110D16141DE57AB10040CCAD /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		110D16121DE57A930040CCAD /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		110D16141DE57AB10040CCAD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		110D16181DE57B350040CCAD /* ManagerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerBase.swift; sourceTree = "<group>"; };
 		110D161A1DE57B730040CCAD /* ServerAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAPIManager.swift; sourceTree = "<group>"; };
 		110D161C1DE57B920040CCAD /* PostsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsManager.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		1183F9D61DE8CD3E007EF94A /* FraicheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FraicheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1183F9DA1DE8CD3E007EF94A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1183F9E11DE8DA1D007EF94A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11BFE6A01DF8BBF3006AEA73 /* UserCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserCoreData.xcdatamodel; sourceTree = "<group>"; };
+		11BFE6A21DF8F787006AEA73 /* EditPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		5AFF2758CCFC933BFF3C3C67 /* Pods-Fraiche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fraiche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fraiche/Pods-Fraiche.release.xcconfig"; sourceTree = "<group>"; };
 		5FB08C5BE4C1FD04B18C7874 /* Pods_FraicheTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FraicheTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77517F9604B00C46468A9911 /* Pods-FraicheTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FraicheTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FraicheTests/Pods-FraicheTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,8 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				110D16101DE57A6C0040CCAD /* ModelBase.swift */,
-				110D16121DE57A930040CCAD /* Posts.swift */,
-				110D16141DE57AB10040CCAD /* Users.swift */,
+				110D16121DE57A930040CCAD /* Post.swift */,
+				110D16141DE57AB10040CCAD /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -104,6 +108,7 @@
 				113230E41DE5693A00953841 /* ProfileViewController.swift */,
 				110D16201DE57C3B0040CCAD /* PostViewController.swift */,
 				110D16221DE57C610040CCAD /* MarketViewController.swift */,
+				11BFE6A21DF8F787006AEA73 /* EditPostViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				110D160F1DE57A580040CCAD /* Models */,
 				110D16161DE57AF00040CCAD /* ViewControllers */,
 				1183F9CE1DE8CA37007EF94A /* Misc */,
+				11BFE69F1DF8BBF3006AEA73 /* UserCoreData.xcdatamodeld */,
 			);
 			path = Fraiche;
 			sourceTree = "<group>";
@@ -402,15 +408,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1183F9E21DE8DA1D007EF94A /* LoginViewController.swift in Sources */,
+				11BFE6A11DF8BBF3006AEA73 /* UserCoreData.xcdatamodeld in Sources */,
 				110D161F1DE57BAD0040CCAD /* UsersManager.swift in Sources */,
 				110D16191DE57B350040CCAD /* ManagerBase.swift in Sources */,
 				113230E51DE5693A00953841 /* ProfileViewController.swift in Sources */,
 				110D16231DE57C610040CCAD /* MarketViewController.swift in Sources */,
 				110D161D1DE57B920040CCAD /* PostsManager.swift in Sources */,
-				110D16131DE57A930040CCAD /* Posts.swift in Sources */,
+				110D16131DE57A930040CCAD /* Post.swift in Sources */,
+				11BFE6A31DF8F787006AEA73 /* EditPostViewController.swift in Sources */,
 				110D16111DE57A6C0040CCAD /* ModelBase.swift in Sources */,
 				110D161B1DE57B730040CCAD /* ServerAPIManager.swift in Sources */,
-				110D16151DE57AB10040CCAD /* Users.swift in Sources */,
+				110D16151DE57AB10040CCAD /* User.swift in Sources */,
 				1170B1451DE40CC4008F221F /* AppDelegate.swift in Sources */,
 				110D16211DE57C3B0040CCAD /* PostViewController.swift in Sources */,
 			);
@@ -553,6 +561,7 @@
 				CODE_SIGN_ENTITLEMENTS = Fraiche/Fraiche.entitlements;
 				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
 				INFOPLIST_FILE = Fraiche/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.Fraiche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,6 +577,7 @@
 				CODE_SIGN_ENTITLEMENTS = Fraiche/Fraiche.entitlements;
 				DEVELOPMENT_TEAM = V7LNKYNJ2Z;
 				INFOPLIST_FILE = Fraiche/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.itp344finalproject.www.Fraiche;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -636,6 +646,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11BFE69F1DF8BBF3006AEA73 /* UserCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11BFE6A01DF8BBF3006AEA73 /* UserCoreData.xcdatamodel */,
+			);
+			currentVersion = 11BFE6A01DF8BBF3006AEA73 /* UserCoreData.xcdatamodel */;
+			path = UserCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1170B1391DE40CC4008F221F /* Project object */;
 }
